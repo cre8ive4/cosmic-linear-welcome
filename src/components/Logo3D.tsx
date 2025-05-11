@@ -64,7 +64,7 @@ const Logo3D: React.FC<Logo3DProps> = ({ progress }) => {
         className="w-60 h-auto pulse-animation"
         style={{ 
           transition: 'all 0.5s ease-out',
-          transform: `scale(${1 + (progress < 50 ? progress * 0.004 : (100 - progress) * 0.004})` 
+          transform: `scale(${1 + (progress < 50 ? progress * 0.004 : (100 - progress) * 0.004)})`
         }}
       />
     </div>
