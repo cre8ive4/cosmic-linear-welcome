@@ -30,7 +30,6 @@ const WelcomeMessage: React.FC<WelcomeMessageProps> = ({ visible }) => {
       <h1 className="text-3xl md:text-4xl font-bold tracking-wider text-black">
         {message}
       </h1>
-      <p className="mt-2 text-gray-600 text-lg">Connecting the world through travel</p>
     </div>
   );
 };

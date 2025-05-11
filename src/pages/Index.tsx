@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { useLoading } from '@/hooks/useLoading';
 import LoadingScreen from '@/components/LoadingScreen';
@@ -6,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
 const Index = () => {
-  const { isLoading, progress, isFadingOut } = useLoading(3000); // 3 seconds loading
+  const { isLoading, progress, isFadingOut } = useLoading(); // Using our modified 3-second loading
   const { toast } = useToast();
   const [loaded, setLoaded] = useState(false);
 

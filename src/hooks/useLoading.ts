@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 
-export const useLoading = (duration: number = 3000) => {
+export const useLoading = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
   const [isFadingOut, setIsFadingOut] = useState(false);
@@ -9,6 +9,7 @@ export const useLoading = (duration: number = 3000) => {
   useEffect(() => {
     let startTime: number;
     let animationFrame: number;
+    const duration = 3000; // Exactly 3 seconds
     
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
@@ -24,7 +25,7 @@ export const useLoading = (duration: number = 3000) => {
         setIsFadingOut(true);
         setTimeout(() => {
           setIsLoading(false);
-        }, 500); // Fade out duration
+        }, 500); // Smooth fade out duration
       }
     };
     
@@ -35,7 +36,7 @@ export const useLoading = (duration: number = 3000) => {
         cancelAnimationFrame(animationFrame);
       }
     };
-  }, [duration]);
+  }, []);
   
   return { isLoading, progress, isFadingOut };
 };
